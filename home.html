@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="topnav">
+                        <div class="logo">
+                            <img src="https://companieslogo.com/img/orig/ATO.PA.D-3c97ece3.png?t=1720244490" alt="Logo">
+                        </div>
+            <nav class="navigation">
+                <a href="#home">Domů</a>
+                <a href="#kurzy">Kurzy</a>
+                <a href="#lektori">Lektoři</a>
+                <a href="#studenti">Studenti</a>
+            </nav>
+           <div class="search">
+                <input type="text" id="sectionSearch" placeholder="Hledat sekci..." onkeyup="searchSection(event)">
+            </div> 
+            <button onclick="location.href='index.html'" type="button" class="btn-logoff">Odhlásit se</button> 
+        </div>
+</header>
+<main>
+        <section class="intro">
+            <div class="intro-block">
+            <h1>Vítejte zpět!</h1>
+            <p>Spravujte své kurzy, studenty a lektory</p>
+            </div>
+        </section>
+
+        <section class="content" id="home">
+            <div class="content-block">
+                <h2>Domovská stránka</h2>
+                <p>Zde najdete přehled o vašich kurzech a aktivitách.</p>
+            </div>
+
+            <!-- Three side-by-side tables: Kurzy, Lektoři, Studenti -->
+            <div class="tables" aria-label="Přehled">
+                <div class="table-card" id="courses">
+                    <h3>Kurzy</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Název kurzu</th><th>Datum</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>HTML základy</td><td>2025-12-01</td></tr>
+                            <tr><td>CSS pro začátečníky</td><td>2025-12-10</td></tr>
+                            <!-- Přidávejte další řádky zde v HTML -->
+                        </tbody>
+                    </table>
+                    <form class="add-form" id="form-add-course" onsubmit="addCourse(event)">
+                        <input type="text" id="course-name" placeholder="Název kurzu" aria-label="Název kurzu" required>
+                        <input type="date" id="course-date" aria-label="Datum kurzu">
+                        <button type="submit">Přidat</button>
+                    </form>
+                </div>
+
+                <div class="table-card" id="instructors">
+                    <h3>Lektoři</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Jméno</th><th>Specializace</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Jan Novák</td><td>Web development</td></tr>
+                            <tr><td>Petra Svobodová</td><td>Design</td></tr>
+                            <!-- Přidávejte další řádky zde v HTML -->
+                        </tbody>
+                    </table>
+                    <form class="add-form" id="form-add-instructor" onsubmit="addInstructor(event)">
+                        <input type="text" id="instructor-name" placeholder="Jméno" aria-label="Jméno lektora" required>
+                        <input type="text" id="instructor-specialty" placeholder="Specializace" aria-label="Specializace">
+                        <button type="submit">Přidat</button>
+                    </form>
+                </div>
+
+                <div class="table-card" id="students">
+                    <h3>Studenti</h3>
+                    <table>
+                        <thead>
+                            <tr><th>Jméno</th><th>Kurz</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Eva Malá</td><td>HTML základy</td></tr>
+                            <tr><td>Tomáš Dvořák</td><td>CSS pro začátečníky</td></tr>
+                            <!-- Přidávejte další řádky zde v HTML -->
+                        </tbody>
+                    </table>
+                    <form class="add-form" id="form-add-student" onsubmit="addStudent(event)">
+                        <input type="text" id="student-name" placeholder="Jméno studenta" aria-label="Jméno studenta" required>
+                        <input type="text" id="student-course" placeholder="Kurz" aria-label="Kurz studenta">
+                        <button type="submit">Přidat</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+</main>
+</body>
+</html>

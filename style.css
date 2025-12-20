@@ -1,0 +1,113 @@
+:root{
+  --bg: #f4f4f4;
+  --dark: #111;
+  --muted: #666;
+  --accent: #0077b6;
+  --white: #fff;
+  --card-bg: rgba(0,0,0,0.6);
+  --container: 1100px;
+  --radius: 6px;
+  --header-height: 680px;
+}
+body{
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg);
+  color: var(--dark);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.header{
+    width:100%;
+}
+
+/* Make the top navigation fixed to the top and keep its content on the right */
+.topnav{
+  color:white;
+  font-weight: bold;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: flex-start; /* start so logo can be at left */
+  background: #8488f5;
+background: linear-gradient(90deg, rgba(132, 136, 245, 1) 0%, rgba(58, 55, 219, 1) 50%, rgba(25, 25, 158, 1) 100%, rgba(0, 12, 242, 1) 100%);
+  height: 80px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+.logo img{
+    height: 40px;
+    margin-right: auto;
+    justify-content: flex-start;
+}
+
+
+/* prevent page content from being hidden under the fixed nav */
+body{
+  padding-top: 67px;
+}
+/* Hlavní obsah webové stránky */
+.intro{
+    text-align: center;
+    padding: 60px 20px;
+    background: url('https://media.istockphoto.com/id/1473121061/vector/vector-illustration-with-blue-curves-overlapping-background-margins-and-gradient-waves-and.jpg?s=612x612&w=0&k=20&c=Mp7wTkbVW2opnPEA-UzZvt8yjYMKo12Bkv7LHApDXqY=') no-repeat center center/cover;
+    color: var(--white);
+    height: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.intro-block{
+    position: relative;
+    background: linear-gradient(90deg, rgba(132, 136, 245, 1) 0%, rgba(58, 55, 219, 1) 50%, rgba(25, 25, 158, 1) 100%, rgba(0, 12, 242, 1) 100%);
+    opacity: 0.9;
+    padding: 20px;
+    border-radius: 30px;
+}
+.intro-block:hover{
+    transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.block-btn{
+    margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.block-btn .btn-primary{
+  padding: 12px 28px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.95);
+  color: var(--dark);
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.block-btn .btn-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.2);
+}
+
+.block-btn .btn-primary:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255,255,255,0.15);
+}
+
+
+
