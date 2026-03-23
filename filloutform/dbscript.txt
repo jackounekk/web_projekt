@@ -1,0 +1,35 @@
+CREATE DATABASE sprava_kurzu;
+USE sprava_kurzu;
+
+-- Tabulka lektorů
+CREATE TABLE lektori (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    jmeno VARCHAR(100),
+    specializace VARCHAR(100)
+);
+
+-- Tabulka kurzů
+CREATE TABLE kurzy (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nazev VARCHAR(100),
+    popis TEXT,
+    lektor_id INT,
+    FOREIGN KEY (lektor_id) REFERENCES lektori(id)
+);
+
+-- Tabulka studentů
+CREATE TABLE studenti (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    jmeno VARCHAR(100),
+    email VARCHAR(100)
+);
+
+-- Tabulka přihlášek (propojení studentů a kurzů)
+CREATE TABLE prihlasky (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    student_id INT,
+    kurz_id INT,
+    datum_prihlaseni TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (student_id) REFERENCES studenti(id),
+    FOREIGN KEY (kurz_id) REFERENCES kurzy(id)
+);
