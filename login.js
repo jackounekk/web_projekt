@@ -5,7 +5,7 @@
             // demo kontrola
             if (u === "admin" && p === "1234") {
                 // přesměrování na hlavní stránku
-                window.location.href = "home.html";
+                window.location.href = "addnew.php";
             } else {
                 alert("Špatné přihlašovací údaje!");
             }

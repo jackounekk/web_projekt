@@ -182,9 +182,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['akce'])) {
         </div>
         <div class="navigation">
             <a href="#">Domů</a>
-            <a href="#lektoři">Lektoři</a>
-            <a href="#kurzy">Kurzy</a>
-            <a href="#studenti">Studenti</a>
+            <a href="#lektoři">Účastníci</a>
+            <a href="evidence.php">Evidence</a>
+            
         </div>
         <div class="search">
             <input type="text" placeholder="Hledat kurz...">
