@@ -101,6 +101,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['akce'])) {
             margin-top: 80px;
         }
 
+.search{
+  margin-left: 20px;
+  display: flex;
+}
+
+.search input{
+  padding: 10px 16px;
+  border: 2px solid white;
+  border-radius: 25px;
+  background: white;
+  color: #333;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  width: 220px;
+}
+
+.search input::placeholder{
+  color: #999;
+}
+
+.search input:focus{
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+.btn-logoff{
+  margin-left: 20px;
+  padding: 8px 16px;
+  background: #8488f5;
+background: linear-gradient(90deg, rgba(132, 136, 245, 1) 0%, rgba(58, 55, 219, 1) 50%, rgba(25, 25, 158, 1) 100%, rgba(0, 12, 242, 1) 100%);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.btn-logoff:hover{
+  background: gray;
+transition: background 0.5s ease;
+}
         .intro-block {
             position: relative;
             background: var(--grad);
@@ -177,19 +218,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['akce'])) {
 
     <nav class="topnav">
         <div class="logo">
-            <img src="https://cdn-icons-png.flaticon.com/512/3413/3413535.png" alt="Logo">
             <span style="margin-left: 10px; font-size: 24px;">EduManager</span>
         </div>
         <div class="navigation">
             <a href="#">Domů</a>
-            <a href="#lektoři">Účastníci</a>
+            <a href="kurzy_kalendar.php">Kalendář</a>
             <a href="evidence.php">Evidence</a>
             
         </div>
         <div class="search">
-            <input type="text" placeholder="Hledat kurz...">
+            <input type="text" id="sectionSearch" placeholder="Hledat kurz..." onkeyup="searchSection(event)">
         </div>
-        <button class="btn-logoff">Odhlásit</button>
+        <button onclick="location.href='index.html'" type="button" class="btn-logoff">Odhlásit</button>
     </nav>
 
     <header class="intro">
